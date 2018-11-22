@@ -1,0 +1,72 @@
+:root {
+    /* Set fade in duration */
+    --fade-time: 0.5s;
+  }
+  
+  body {
+    margin: 20px;
+    padding: 0;
+    background: #333;
+  }
+  
+  .galeria {
+    max-width: 760px;
+    margin: auto;
+    border: #fff solid 3px;
+    background: #fff;
+  }
+  
+  .destaque img,
+  .galeria-grid img {
+    width: 100%;
+  }
+  
+  .galeria-grid {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  .galeria-miniatura {
+    width: calc(100% / 4);
+  }
+  
+  .galeria-grid img {
+    cursor: pointer;
+  }
+  
+  /* Fade in animation */
+  @keyframes fadeIn {
+    to {
+      opacity: 1;
+    }
+  }
+  
+  .fade-in {
+    opacity: 0;
+    animation: fadeIn var(--fade-time) ease-in 1 forwards;
+  }
+  
+  /* Media Queries */
+  @media(max-width: 768px) {
+    .galeria-grid {
+        display: flex;
+        align-items: flex-start;
+        flex-wrap: nowrap;
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+        -ms-overflow-style: -ms-autohiding-scrollbar;
+    }
+
+    .galeria-miniatura {
+      width: 80%;
+    }
+
+    .galeria-grid img {
+        flex: 0 0 auto;
+        max-width: 100%;
+    }
+
+    .gallery::-webkit-scrollbar {
+        display: none;
+    }
+    }
