@@ -1,12 +1,12 @@
 const current = document.querySelector('#current');
-const galeriaGrid = document.querySelector('.galeria-grid');
-const img = document.querySelectorAll('.galeria-grid img');
+const imgGrid = document.querySelector('.imgGrid');
+const img = document.querySelectorAll('.imgGrid img');
 const opacity = 0.6;
 
 // Set first img opacity
 img[0].style.opacity = opacity;
 
-galeriaGrid.addEventListener('click', imgClick);
+imgGrid.addEventListener('click', imgClick);
 
 function imgClick(e) {
   // Reset the opacity
