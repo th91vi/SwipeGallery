@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Menu responsivo slide</title>
+    <style>
+        /**
+ * Code you need
+ */
+        .scroll {
+            white-space: nowrap;
+            overflow-x: auto;
+            -webkit-overflow-scrolling: touch;
+            -ms-overflow-style: -ms-autohiding-scrollbar;
+        }
+
+        .nav-item.active {
+            color: #fff;
+            box-shadow: -1px 0 #727c87, 1px 0 #727c87;
+            background-color: #727c87;
+        }
+
+        .submenu {
+            height: 0;
+            opacity: 0;
+        }
+
+        .submenu.active {
+            height: auto;
+            opacity: 1;
+        }
+
+        /**
+ * Helper
+ */
+        .bg-dark-blue {
+            background-color: #152637;
+        }
+
+        .bg-grey {
+            background-color: #727c87;
+        }
+
+        .bg-dark-grey {
+            background-color: #555f6a;
+        }
+
+        .radius {
+            border-radius: 3px;
+        }
+
+        .radius-top {
+            border-radius: 3px 3px 0 0;
+        }
+
+        .radius-bottom {
+            border-radius: 0 0 3px 3px;
+        }
+
+        .text-center {
+            text-align: center;
+        }
+
+        .vam,
+        .nav-item {
+            display: inline-block;
+            vertical-align: middle;
+        }
+
+        /**
+ * Example specific
+ */
+        .example-two .logo {
+            width: 27.5%;
+        }
+
+        .example-two .nav {
+            width: 72.5%;
+        }
+
+        .example-three .logo {
+            border: none;
+        }
+
+        .example-three .nav-item.active,
+        .example-three .submenu .nav-item {
+            color: #fff;
+            box-shadow: -1px 0 #555f6a, 1px 0 #555f6a;
+            background-color: #555f6a;
+        }
+
+        /**
+ * Visual style
+ */
+        .logo {
+            text-align: center;
+            font-weight: 700;
+            color: #727c87;
+            border-right: 1px solid rgba(114, 124, 135, 0.2);
+            padding: 13px 32px 12px;
+        }
+
+        .nav-item {
+            cursor: pointer;
+            padding: 13px 16px 12px;
+        }
+
+        .nav-item:not(:last-child) {
+            border-right: 1px solid rgba(114, 124, 135, 0.2);
+        }
+
+        .bg-grey .nav-item {
+            color: #fff;
+        }
+
+        .submenu {
+            border-radius: 0 0 3px 3px;
+        }
+
+        header,
+        nav {
+            font-size: 0;
+        }
+
+        header {
+            overflow: hidden;
+        }
+
+        .logo,
+        .nav-item {
+            font-size: 14px;
+        }
+
+        .title {
+            margin: 24px 0 6px;
+            font-size: 12px;
+            text-transform: uppercase;
+            letter-spacing: .2em;
+            color: #999;
+        }
+
+        /**
+ * Setup
+ */
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            max-width: 100%;
+            /* margin: 5% auto; */
+            color: #64cce3;
+            line-height: 1.5;
+        }
+
+        a {
+            color: #64cce3;
+            text-decoration: none;
+        }
+
+        ul,
+        li {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        .scroll::-webkit-scrollbar {
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container example-one">
+        <!-- <div class="title">All scrolling (using JS)</div> -->
+        <header class="bg-dark-blue radius">
+          <nav class="nav scroll">
+            <!-- <span class="vam logo">Logo</span> -->
+            <span class="nav-item active" data-id="urbanismo" aria-controls="urbanismo">Urbanismo<br>e Paisagismo</span>
+            <span class="nav-item" data-id="arquitetura" aria-controls="arquitetura">Arquitetura</span>
+            <span class="nav-item" data-id="ambientacao" aria-controls="ambientacao">Ambientação<br>e Design</span>
+            <span class="nav-item" data-id="retrofit" aria-controls="retrofit">Retrofit<br>e Restauro</span>
+            <span class="nav-item" data-id="museus" aria-controls="museus">Museus<br>e Exposições</span>
+            <span class="nav-item" data-id="culturais" aria-controls="culturais">Projetos<br>Culturais</span>
+          </nav>
+          <div class="bg-grey submenu scroll active" id="urbanismo">
+            <span class="nav-item">Lorem</span>
+            <span class="nav-item">Ipsum</span>
+            <span class="nav-item">Dolor</span>
+            <span class="nav-item">Sit</span>
+            <span class="nav-item">Ammet</span>
+            <span class="nav-item">Lorem</span>
+            <span class="nav-item">Ipsum</span>
+          </div>
+          <div class="bg-grey submenu scroll" id="arquitetura">
+            <span class="nav-item">Lorem</span>
+            <span class="nav-item">Upsum</span>
+            <span class="nav-item">Dolor</span>
+            <span class="nav-item">Web</span>
+            <span class="nav-item">Sit</span>
+            <span class="nav-item">Ammet</span>
+            <span class="nav-item">Lorem</span>
+          </div>
+          <div class="bg-grey submenu scroll" id="ambientacao">
+            <span class="nav-item">Lorem</span>
+            <span class="nav-item">Upsum</span>
+            <span class="nav-item">Dolor</span>
+            <span class="nav-item">Web</span>
+            <span class="nav-item">Sit</span>
+            <span class="nav-item">Ammet</span>
+            <span class="nav-item">Lorem</span>
+          </div>
+          <div class="bg-grey submenu scroll" id="retrofit">
+            <span class="nav-item">Lorem</span>
+            <span class="nav-item">Upsum</span>
+            <span class="nav-item">Dolor</span>
+            <span class="nav-item">Web</span>
+            <span class="nav-item">Sit</span>
+            <span class="nav-item">Ammet</span>
+            <span class="nav-item">Lorem</span>
+          </div>
+          <div class="bg-grey submenu scroll" id="museus">
+            <span class="nav-item">Lorem</span>
+            <span class="nav-item">Upsum</span>
+            <span class="nav-item">Dolor</span>
+            <span class="nav-item">Web</span>
+            <span class="nav-item">Sit</span>
+            <span class="nav-item">Ammet</span>
+            <span class="nav-item">Lorem</span>
+          </div>
+          <div class="bg-grey submenu scroll" id="culturais">
+            <span class="nav-item">Lorem</span>
+            <span class="nav-item">Upsum</span>
+            <span class="nav-item">Dolor</span>
+            <span class="nav-item">Web</span>
+            <span class="nav-item">Sit</span>
+            <span class="nav-item">Ammet</span>
+            <span class="nav-item">Lorem</span>
+          </div>
+        </header>
+      </div>
+    <script type="text/javascript">
+        (function (window, document, undefined) {
+            'use strict';
+
+            // Select nav items that have submenus
+            var hasSubmenu = document.querySelectorAll('[data-id]');
+            var active = 'active';
+            var i = 0;
+
+            // Show the submenu by toggling the relevant class names
+            function showSubmenu(event) {
+                // We lose reference of this when filtering the nav items
+                var self = this;
+
+                // Select the relevant submenu, by the data-id attribute
+                var submenu = document.getElementById(self.dataset.id);
+
+                // Probably best to prevent clicks through
+                event.preventDefault();
+
+                // Referring to the submenu parentNode
+                // find all elements that aren't the submenu and remove active class
+                var otherSubmenu = Array.prototype.filter.call(
+                    submenu.parentNode.children,
+                    function (child) {
+                        if (child !== submenu) {
+                            removeChildClass(child);
+                        }
+                    });
+
+                // Referring to the the nav item parentNode
+                // find all elements that aren't the submenu and remove active class
+                var otherItem = Array.prototype.filter.call(
+                    self.parentNode.children,
+                    function (child) {
+                        if (child !== self) {
+                            removeChildClass(child);
+                        }
+                    });
+
+                self.classList.toggle(active);
+                submenu.classList.toggle(active);
+            }
+
+            // Remove the active class
+            function removeChildClass(el) {
+                // Check if it exists, then remove
+                if (el.classList.contains(active)) {
+                    el.classList.remove(active);
+                }
+            }
+
+            // On clicks show submenus
+            for (i = 0; i < hasSubmenu.length; i++) {
+                hasSubmenu[i].addEventListener('click', showSubmenu);
+            }
+        })(window, document);
+    </script>
+</body>
+
+</html>
